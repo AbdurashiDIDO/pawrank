@@ -1,6 +1,6 @@
 import sqlite3
 
-from typing import Annotated
+from pinscrape import pinscrape
 from fastapi import FastAPI, Request, Form
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -17,11 +17,12 @@ app.mount("/media", StaticFiles(directory="media"), name="media")
 connection = sqlite3.connect('facemash.db')
 cursor = connection.cursor()
 
+pinscrape.scraper.scrape("cute dog photos", "/app/media", {}, 50, 55)
 
-# create_table()
-# image_saver()
-# #
-# print('Tables are create successfully and inserting images!')
+create_table()
+image_saver()
+
+print('Tables are create successfully and inserting images!')
 
 
 @app.get("/", response_class=HTMLResponse)
