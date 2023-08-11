@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <style>
+
+        .button {
+            padding: 15px 25px;
+            font-size: 24px;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            color: #999999;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: darkred;
+            font-size: 500%;
+            color: white;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 50px;
+        }
+
+        h3 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 30px;
+        }
+
+        h4 {
+            font-size: 40px;
+            margin-top: 20px;
+            padding-top: 170px;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+    </style>
+    <title>PawRank</title>
+
+</head>
+<body>
+<h1>PawRank</h1>
+<h3>Did we welcome dogs into our lives based solely on their appearances? No. Will we assess them based on their looks?
+    Yes.</h3>
+<h2>Who's the Top Dog? Click to choose!</h2>
+
+<form method="post">
+    <div class="box">
+
+        <button type="submit" name="image_1" value="{{ image1 }}"><img src="{{ image1 }}" height="400"
+                                                                           width="300"
+                                                                           style="padding: 10px; text-align: left">
+        </button>
+        <h4 style="text-align: center">OR</h4>
+        <button type="submit" name="image_2" value="{{ image2 }}"><img src='{{ image2 }}' height="400"
+                                                                           width="300"
+                                                                           style="padding: 10px; text-align: right">
+        </button>
+    </div>
+</form>
+
+
+<a href="{{ url_for('get_rating') }}"><h3 style="padding-top: 40px; ">Ratings</h3></a>
+</body>
+
+</html>
